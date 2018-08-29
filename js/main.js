@@ -72,20 +72,20 @@ function moveTo(){
 
 function currentCheck() {
   var scrollY = $(window).scrollTop();
-  var marginY = $(document).height() - scrollY;
-  var hideY = $(window).height() * 1.25;
+  // var marginY = $(document).height() - scrollY;
+  // var hideY = $(window).height() * 1.25;
   var sectionOffset = [];
   $('article section').each(function(){
     sectionOffset.push($(this).offset().top);
   });
   for (i=1; i<sectionOffset.length; i++) {
-    if (sectionOffset[i-1] <= scrollY && sectionOffset[i] > scrollY && marginY > hideY) {
+    if (sectionOffset[i-1] <= scrollY && sectionOffset[i] > scrollY && scrollY <= sectionOffset[sectionOffset.length - 1]) {
       if ($('.jump').css('display') == 'none') {
         $('.jump').fadeIn(300);
       };
-      $('.jump>p').text($('article section').eq(i).attr('id'));
+      $('.jump>p').text($('article section').eq(i).find('h1:first').text());
       $('.jump').attr('href', '#' + $('article section').eq(i).attr('id'));
-    } else if (marginY <= hideY) {
+    } else if (scrollY > sectionOffset[sectionOffset.length - 1]) {
       $('.jump').fadeOut(300);
     }
   }

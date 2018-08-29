@@ -27,8 +27,6 @@
     $('#loader').remove();
     currentCheck();
     $('#larm, #rarm').addClass('active');
-    setTimeout(function(){
-    },1000);
   });
 
   /*** Window Resize ***/

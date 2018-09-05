@@ -146,6 +146,25 @@ footer {
 	background: none;
 }
 
+a.button {
+	display: inline-block;
+	max-width: 100%;
+	width:auto;
+	background: rgba(255,255,255,0.2);
+	color:white;
+	padding: 1em;
+	margin: 0.5em;
+	border-radius: 0.5em;
+	transition: background 0.3s;
+}
+a.button:hover {
+	background: rgba(255,255,255,0.1);
+}
+a.button p {
+	cursor: pointer;
+	display: inline-block;
+}
+
 a.jump {
 	position: fixed;
 	color:white;

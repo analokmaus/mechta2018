@@ -104,8 +104,12 @@ th, td {
 	text-align: left;
 	font-weight: normal;
 }
-thead th {
+thead th,
+tbody th.light {
 	font-weight: lighter;
+}
+tbody th.light {
+	text-align: center;
 }
 thead,tbody{
 	border-bottom: solid 1px white;
